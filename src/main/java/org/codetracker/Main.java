@@ -15,10 +15,10 @@ import java.time.ZoneOffset;
 public class Main {
     private final static String FOLDER_TO_CLONE = "tmp/";
 
-    public static void main(String args[]) throws Exception {
+    public static void main(String[] args) throws Exception {
         GitService gitService = new GitServiceImpl();
         // METHOD TRACKING EXAMPLE
-        try (Repository repository = gitService.cloneIfNotExists(FOLDER_TO_CLONE + "checkstyle\\checkstyle",
+        try (Repository repository = gitService.cloneIfNotExists(FOLDER_TO_CLONE + "checkstyle",
                 "https://github.com/checkstyle/checkstyle.git")){
 
             MethodTracker methodTracker = CodeTracker.methodTracker()
@@ -46,7 +46,7 @@ public class Main {
             System.out.println("======================================================");
         }
         // VARIABLE TRACKING EXAMPLE
-        try (Repository repository = gitService.cloneIfNotExists(FOLDER_TO_CLONE + "checkstyle\\checkstyle",
+        try (Repository repository = gitService.cloneIfNotExists(FOLDER_TO_CLONE + "checkstyle",
                 "https://github.com/checkstyle/checkstyle.git")){
 
             VariableTracker variableTracker = CodeTracker.variableTracker()
@@ -77,7 +77,7 @@ public class Main {
         }
 
         // ATTRIBUTE TRACKING EXAMPLE
-        try (Repository repository = gitService.cloneIfNotExists(FOLDER_TO_CLONE + "checkstyle\\checkstyle",
+        try (Repository repository = gitService.cloneIfNotExists(FOLDER_TO_CLONE + "checkstyle",
                 "https://github.com/checkstyle/checkstyle.git")) {
 
             AttributeTracker attributeTracker = CodeTracker.attributeTracker()
